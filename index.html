@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+   
+    <title>Guide de l'api de la Forfaiterie</title>
+</head>
+<body class="container">
+    <div class="container-fluid py-5">
+        <h1 class="mainTitle text-center">Guide de l'API Forfaits</h1>
+        <div>
+            <h2 class="secondaryTitle text-center py-4">#1 - Affichage de la liste des forfaits en format JSON dans le navigateur Chrome</h2>
+            <ol class="py-5">
+                <li>Télécharger les fichiers  du projet soumis sur  google classroom localement sur votre ordinateur.</li>
+                <li>Ouvrir le site api-forfaits dans chrome à partir du "Localhost" dans Ampps.</li>
+                <li>Dans la barre d'url ajouter "liste-forfaits-json.php" à la fin de l'adresse.</li>
+                <video class="py-5"autoplay muted loop  src="./videos/demo_1.mp4"></video>
+            </ul>
+        </div>
+
+
+        <div>
+            <h2 class="secondaryTitle text-center py-4">#2 - Affichage la fiche du forfait par leur ID en format JSON dans le navigateur Chrome</h2>
+            <ol class="py-5">
+                <li>Dans la barre d'url, modifier le "liste-forfaits-json.php" par "fiche-forfaits-json.php/?id=1".</li>
+                <li>Répétez l'étape #1 en modifiant la valeur de l'id par 2, 3, 4, ou 5 pour consulter la fiche JSON des autres forfaits existants dans la base de données. </li>
+                <video class="py-5" autoplay muted loop src="./videos/demo_2.mp4"></video>
+            </ol>
+        </div>
+
+        <div>
+            <h2 class="secondaryTitle text-center py-4">#3 - Ajouter un forfait avec des données valides par Thunder Client</h2>
+            <ol class="py-5">
+                <li>Importer la base de données api-forfaits dans Ampps.</li>
+                <li>Ouvrir le dossier api-forfaits dans VS Code.</li>
+                <li>Aller dans l'extension Thunder Client et importer la collection API-FORFAIT</li>
+                <li>Sélectionnez la requête "POST FORFAIT".</li>
+                <li>Les données requises sont déjà saisies.</li>
+                <li>Appuyer sur le bouton "Send" dans la barre de la requête.</li>
+                <li>La requête est exécutée et nous avons la confirmation de l'ajout dans la section "Response" à droite.</li>
+                <li>Vérifier l'ID du nouveau forfait en faisant la requête "GET FORFAITS" et notez-le.</li>
+                <video class="py-5" autoplay muted loop src="./videos/demo_3.mp4"></video>
+            </ol>
+        </div>
+
+        <div>
+            <h2 class="secondaryTitle text-center py-4">#4 - Ajouter un forfait avec des données invalides par Thunder Client</h2>
+            <ol class="py-5">
+                <li>Sélectionner la requête "POST FORFAIT".</li>
+                <li>Effacer la donnée "name" de les paramètres.</li>
+                <li>Les données sont déjà saisies pour arriver à une erreur.</li>
+                <li>Appuyer sur le bouton "Send" dans la barre de la requête.</li>
+                <li>La requête est exécutée et nous avons l'erreur dans la section "Response" à droite.</li>
+                <video class="py-5" autoplay muted loop src="./videos/demo_4.mp4"></video>
+            </ol>
+        </div>
+
+        <div>
+            <h2 class="secondaryTitle text-center py-4">#5 - Modifier un forfait avec des données valides par Thunder Client</h2>
+            <ol class="py-5">
+                <li>Sélectionner la requête "PUT FORFAIT".</li>
+                <li>Indiquer l'ID  dans la barre de la requête.</li>
+                <li>Appliquer une modification dans les champs "regular_price" à 499.99 et "promotion_price" à 299.99</li>
+                <li>Appuyer sur le bouton "Send" dans la barre de la requête.</li>
+                <li>La requête est exécutée et nous avons la confirmation de la modification  dans la section "Response" à droite.</li>
+                <video class="py-5" autoplay muted loop src="./videos/demo_5.mp4"></video>
+            </ol>
+        </div>
+
+        <div>
+            <h2 class="secondaryTitle text-center py-4">#6 - Modifier un forfait avec des données valides sans identifiant par Thunder Client</h2>
+            <ol class="py-5">
+                <li>Reprendre la requête "PUT FORFAIT".</li>
+                <li>Effacer l'ID dans la barre de la requête.</li>
+                <li>Modifier le code du forfait pour : TEST NAME SANS ID.</li>
+                <li>Appuyer sur le bouton "Send" dans la barre de la requête.</li>
+                <li>La requête est exécutée et nous avons une erreur dans la section "Response" à droite.</li>
+                <video class="py-5" autoplay muted loop src="./videos/demo_6.mp4"></video>
+            </ol>
+        </div>
+
+
+        <div>
+            <h2 class="secondaryTitle text-center py-4">#7 - Modifier un forfait avec des données invalides par Thunder Client</h2>
+            <ol class="py-5">
+                <li>Sélectionner la requête "PUT FORFAIT".</li>
+                <li>Indiquer l'ID  dans la barre de la requête.</li>
+                <li>Effacer la donnée "name" de les paramètres.</li>
+                <li>Appuyer sur le bouton "Send" dans la barre de la requête.</li>
+                <li>La requête est exécutée et nous avons une erreur dans la section "Response" à droite.</li>
+                <video class="py-5" autoplay muted loop src="./videos/demo_7.mp4"></video>
+            </ol>
+        </div>
+
+        <div>
+            <h2 class="secondaryTitle text-center py-4">#8 - Supprimer un forfait avec des données valides par Thunder Client</h2>
+            <ol class="py-5">
+                <li>Sélectionner la requête "DELETE FORFAIT".</li>
+                <li>Indiquer l'ID dans la barre de la requête</li>
+                <li>Appuyer sur le bouton "Send" dans la barre de la requête.</li>
+                <li>La requête est exécutée et la confirmation de la suppression dans la section "Response" à droite.</li>
+                <video class="py-5" autoplay muted loop src="./videos/demo_8.mp4"></video>
+            </ol>
+        </div>
+
+        <div>
+            <h2 class="secondaryTitle text-center py-4">#9 - Supprimer un forfait avec des données valides sans indentifiant par Thunder Client</h2>
+            <ol class="py-5">
+                <li>Reprendre la requête "DELETE FORFAIT".</li>
+                <li>Effacer l'ID dans la barre de la requête.</li>
+                <li>Appuyer sur le bouton "Send" dans la barre de la requête.</li>
+                <li>La requête est exécutée et nous avons une erreur dans la section "Response" à droite.</li>
+                <video class="py-5" autoplay muted loop src="./videos/demo_9.mp4"></video>
+            </ol>
+        </div>
+
+        <div>
+            <h2 class="secondaryTitle text-center py-4">#10 - Afficher la liste des forfaits après les opérations faites des points 2 à 8 par Thunder Client</h2>
+            <ol class="py-5">
+                <li>Sélectionner la requête "GET FORFAITS"</li>
+                <li>Appuyer sur le bouton "Send" dans la barre de la requête.</li>
+                <li>La requête est exécutée et les données des forfaits sont affichées dans la section "Response" à droite.</li>
+                <video class="py-5" autoplay muted loop src="./videos/demo_10.mp4"></video>
+            </ol>
+        </div>
+
+        <div>
+            <h2 class="secondaryTitle text-center py-4">#11 - Afficher la liste des attractions par Thunder Client</h2>
+            <ol class="py-5">
+                <li>Sélectionner la requête "GET ATTRACTIONS"</li>
+                <li>Appuyer sur le bouton "Send" dans la barre de la requête.</li>
+                <li>La requête est exécutée et les données des attractions sont affichées dans la section "Response" à droite.</li>
+                <video class="py-5" autoplay muted loop src="./videos/demo_11.mp4"></video>
+            </ol>
+        </div>
+       
+       
+       
+
+    </div>
+   
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
